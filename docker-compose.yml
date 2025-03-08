@@ -1,18 +1,30 @@
+version: '3.8'
+
 services:
-  postgres:
-    image: postgres:15
-    container_name: postgres_db
-    restart: always
+  mysql_db:
+    image: mysql:latest
+    container_name: mysql_db
     environment:
-      POSTGRES_DB: shopping_db
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: shopping_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mysql_data:/var/lib/mysql
     networks:
       - shopping_network
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - shopping_network
+    depends_on:
+      - mysql_db
 
   rabbitmq:
     image: rabbitmq:3-management
@@ -27,31 +39,8 @@ services:
     networks:
       - shopping_network
 
-  eureka-server:
-    build: ./ms-eureka
-    container_name: ms-eureka
-    restart: always
-    ports:
-      - "8761:8761"
-    networks:
-      - shopping_network
-
-  ms-users:
-    build: ./ms-users
-    container_name: ms-users
-    restart: always
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
-      EUREKA_SERVER: http://ms-eureka/
-    ports:
-      - "8081:8081"
-    depends_on:
-      - eureka-server
-    networks:
-      - shopping_network
-
 volumes:
-  postgres_data:
+  mysql_data:
 
 networks:
   shopping_network:
