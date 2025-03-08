@@ -36,9 +36,24 @@ services:
     networks:
       - shopping_network
 
+  ms-users:
+    build: ./ms-users
+    container_name: ms-users
+    restart: always
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_SERVER: http://ms-eureka/
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+    networks:
+      - shopping_network
+
 volumes:
   postgres_data:
 
 networks:
   shopping_network:
     driver: bridge
+    name: shopping_network

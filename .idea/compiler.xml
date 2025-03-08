@@ -9,17 +9,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ms-users" />
         <module name="ms-eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ms-eureka" target="17" />
+      <module name="ms-users" target="17" />
       <module name="shopping-cart" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ms-eureka" options="-parameters" />
+      <module name="ms-users" options="-parameters" />
       <module name="shopping-cart" options="" />
     </option>
   </component>
