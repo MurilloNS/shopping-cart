@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_9_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/repositories/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_48_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_7_5.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/UserResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/ApiError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/EmailAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/RestExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/Role.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,6 +48,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
     <option name="showModules" value="false" />
   </component>

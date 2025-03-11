@@ -1,5 +1,6 @@
 package com.ollirum.ms_users.entities;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import jakarta.persistence.*;
 
@@ -16,6 +17,15 @@ public class Role {
 
     public Role() {}
 
+    public Role(String name) {
+        this.name = name;
+    }
+
+    @JsonCreator
+    public static Role fromString(String name) {
+        return new Role(name);
+    }
+    
     public Role(Long id, String name) {
         this.id = id;
         this.name = name;
