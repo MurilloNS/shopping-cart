@@ -35,6 +35,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> {
                     authorize.requestMatchers("/api/auth/**").permitAll();
+                    authorize.requestMatchers("/api/password-reset/**").permitAll();
                     authorize.anyRequest().authenticated();
                 })
                 .exceptionHandling(exception -> exception

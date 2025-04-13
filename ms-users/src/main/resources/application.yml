@@ -19,6 +19,17 @@ spring:
       secret-key: "17KlgIf}WM[H7TBunx/9M!bFyT2gUM@G"
       expiration-time: 3600000
       password-reset-expiration: 900000
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "murillo.murillo2001@gmail.com"
+    password: "umad yauv aeku tphh"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 eureka:
   client:
