@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_angus_jakarta_mail_2_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_3_4_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/PasswordResetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/PasswordResetRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/ResetPasswordDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/PasswordResetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/PasswordResetServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_6_4_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +60,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MsUsersApplication">
+  <component name="RunManager" selected="Application.MsEurekaApplication">
     <configuration name="MsEurekaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_eureka.MsEurekaApplication" />
       <module name="ms-eureka" />
@@ -91,8 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MsUsersApplication" />
         <item itemvalue="Application.MsEurekaApplication" />
+        <item itemvalue="Application.MsUsersApplication" />
       </list>
     </recent_temporary>
   </component>
