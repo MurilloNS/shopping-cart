@@ -60,7 +60,6 @@ public class UserServiceImpl implements UserService {
         User savedUser = userRepository.save(user);
 
         UserResponseDto userResponseDto = new UserResponseDto();
-        userResponseDto.setName(savedUser.getName());
         userResponseDto.setEmail(savedUser.getEmail());
         userResponseDto.setRoles(savedUser.getRoles());
 

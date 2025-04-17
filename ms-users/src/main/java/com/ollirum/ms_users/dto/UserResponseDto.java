@@ -5,24 +5,14 @@ import com.ollirum.ms_users.entities.Role;
 import java.util.Set;
 
 public class UserResponseDto {
-    private String name;
     private String email;
     private Set<Role> roles;
 
     public UserResponseDto() {}
 
-    public UserResponseDto(String name, String email, Set<Role> roles) {
-        this.name = name;
+    public UserResponseDto(String email, Set<Role> roles) {
         this.email = email;
         this.roles = roles;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {

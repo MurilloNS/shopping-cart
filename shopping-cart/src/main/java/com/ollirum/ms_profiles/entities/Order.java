@@ -1,10 +1,12 @@
 package com.ollirum.ms_profiles.entities;
 
+import com.ollirum.ms_profiles.enums.OrderStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,8 +15,9 @@ public class Order {
     @Column(nullable = false)
     private LocalDateTime orderDate;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private String status;
+    private OrderStatus status;
 
     @ManyToOne
     @JoinColumn(name = "profile_id")
@@ -23,7 +26,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(Long id, LocalDateTime orderDate, String status, Profile profile) {
+    public Order(Long id, LocalDateTime orderDate, OrderStatus status, Profile profile) {
         this.id = id;
         this.orderDate = orderDate;
         this.status = status;
@@ -46,11 +49,11 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 
