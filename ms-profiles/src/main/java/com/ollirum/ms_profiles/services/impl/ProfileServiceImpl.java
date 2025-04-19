@@ -1,6 +1,7 @@
 package com.ollirum.ms_profiles.services.impl;
 
 import com.ollirum.ms_profiles.entities.Profile;
+import com.ollirum.ms_profiles.exceptions.ProfileNotFoundException;
 import com.ollirum.ms_profiles.repositories.ProfileRepository;
 import com.ollirum.ms_profiles.services.ProfileService;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,10 @@ public class ProfileServiceImpl implements ProfileService {
         profile.setName(name);
 
         profileRepository.save(profile);
+    }
+
+    @Override
+    public Profile getProfileById(Long id) {
+        return profileRepository.findById(id).orElseThrow(() -> new ProfileNotFoundException("Usuário(a) não encontrado(a)!"));
     }
 }

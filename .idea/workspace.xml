@@ -5,41 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/constants/RabbitMQConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/dto/UserCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/listener/UserCreatedListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/constants/RabbitMQConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/UserCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/UserEventPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserEventPublisherImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_6_4_3.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/ProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/exceptions/ApiError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/exceptions/ProfileNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/exceptions/RestExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/UserResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/UserResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-cart.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/MsProfilesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/MsProfilesApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/entities/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/enums/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/repositories/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/AddressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/repositories/ProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/ProfileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart/src/test/java/com/ollirum/ms_profiles/MsProfilesApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/test/java/com/ollirum/ms_profiles/MsProfilesApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/ProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/ProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/RestExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/PasswordResetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/PasswordResetServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +65,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Spring/shopping-cart",
-    "settings.editor.selected.configurable": "com.haulmont.jpb.viewMode"
+    "last_opened_file_path": "D:/Spring/shopping-cart/ms-profiles/src/main/java/com/ollirum/ms_profiles",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Spring\shopping-cart\ms-profiles\src\main\java\com\ollirum\ms_profiles" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.ollirum.ms_profiles.constants" />
       <recent name="com.ollirum.ms_profiles.configuration" />
+      <recent name="com.ollirum.ms_profiles.constants" />
       <recent name="com.ollirum.ms_profiles.dto" />
     </key>
   </component>

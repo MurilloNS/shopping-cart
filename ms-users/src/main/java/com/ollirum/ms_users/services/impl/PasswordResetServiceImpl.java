@@ -47,7 +47,7 @@ public class PasswordResetServiceImpl implements PasswordResetService {
                 .setSubject(user.getEmail())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + resetTokenExpiration))
-                .signWith(jwtTokenProvider.key(), SignatureAlgorithm.HS256)
+                .signWith(jwtTokenProvider.getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
