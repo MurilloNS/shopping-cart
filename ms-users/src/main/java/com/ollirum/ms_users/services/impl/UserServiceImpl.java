@@ -3,6 +3,7 @@ package com.ollirum.ms_users.services.impl;
 import com.ollirum.ms_users.configuration.JwtTokenProvider;
 import com.ollirum.ms_users.dto.LoginRequestDto;
 import com.ollirum.ms_users.dto.LoginResponseDto;
+import com.ollirum.ms_users.dto.UserCreatedEvent;
 import com.ollirum.ms_users.dto.UserResponseDto;
 import com.ollirum.ms_users.entities.Role;
 import com.ollirum.ms_users.entities.User;
@@ -10,6 +11,7 @@ import com.ollirum.ms_users.exceptions.EmailAlreadyExistsException;
 import com.ollirum.ms_users.exceptions.InvalidCredentialsException;
 import com.ollirum.ms_users.repositories.RoleRepository;
 import com.ollirum.ms_users.repositories.UserRepository;
+import com.ollirum.ms_users.services.UserEventPublisher;
 import com.ollirum.ms_users.services.UserService;
 import jakarta.ws.rs.NotFoundException;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,13 +34,15 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
+    private final UserEventPublisher userEventPublisher;
 
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserEventPublisher userEventPublisher) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
+        this.userEventPublisher = userEventPublisher;
     }
 
     @Override
@@ -59,7 +63,12 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User savedUser = userRepository.save(user);
 
+        userEventPublisher.publishUserCreated(
+                new UserCreatedEvent(savedUser.getId(), savedUser.getName(), savedUser.getEmail(), savedUser.getRolesAsString())
+        );
+
         UserResponseDto userResponseDto = new UserResponseDto();
+        userResponseDto.setName(savedUser.getName());
         userResponseDto.setEmail(savedUser.getEmail());
         userResponseDto.setRoles(savedUser.getRoles());
 

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "users")
@@ -11,6 +12,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
+    private String name;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -28,15 +32,15 @@ public class User {
     private LocalDateTime updatedAt = LocalDateTime.now();
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "users_roles",
-        joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Set<Role> roles;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(Long id, String email, String password, boolean isEnabled, LocalDateTime createdAt, LocalDateTime updatedAt, Set<Role> roles) {
+    public User(Long id, String name, String email, String password, boolean isEnabled, LocalDateTime createdAt, LocalDateTime updatedAt, Set<Role> roles) {
         this.id = id;
+        this.name = name;
         this.email = email;
         this.password = password;
         this.isEnabled = isEnabled;
@@ -51,6 +55,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -99,5 +111,9 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Set<String> getRolesAsString() {
+        return roles.stream().map(Role::getName).collect(Collectors.toSet());
     }
 }

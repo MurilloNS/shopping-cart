@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "profile")
 public class Profile {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -26,9 +26,9 @@ public class Profile {
     public Profile() {
     }
 
-    public Profile(Long id, String nome, String email, List<Address> addresses, List<Order> ordersHistory) {
+    public Profile(Long id, String name, String email, List<Address> addresses, List<Order> ordersHistory) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.email = email;
         this.addresses = addresses;
         this.ordersHistory = ordersHistory;
@@ -42,12 +42,12 @@ public class Profile {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {

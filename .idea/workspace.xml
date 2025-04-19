@@ -5,18 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/enums/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/AddressRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/ProfileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/constants/RabbitMQConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/dto/UserCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/listener/UserCreatedListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/constants/RabbitMQConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/UserCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/UserEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserEventPublisherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_6_4_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/UserResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/dto/UserResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-cart.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/MsProfilesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/MsProfilesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/entities/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/enums/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/repositories/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/AddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/java/com/ollirum/ms_profiles/repositories/ProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/repositories/ProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart/src/test/java/com/ollirum/ms_profiles/MsProfilesApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/test/java/com/ollirum/ms_profiles/MsProfilesApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,10 +85,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "D:/Spring/shopping-cart",
-    "settings.editor.selected.configurable": "configurable.group.tools"
+    "settings.editor.selected.configurable": "com.haulmont.jpb.viewMode"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.MsUsersApplication">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ollirum.ms_profiles.constants" />
+      <recent name="com.ollirum.ms_profiles.configuration" />
+      <recent name="com.ollirum.ms_profiles.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MsProfilesApplication">
     <configuration name="MsEurekaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_eureka.MsEurekaApplication" />
       <module name="ms-eureka" />
@@ -107,8 +137,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MsUsersApplication" />
         <item itemvalue="Application.MsProfilesApplication" />
+        <item itemvalue="Application.MsUsersApplication" />
         <item itemvalue="Application.MsEurekaApplication" />
       </list>
     </recent_temporary>
