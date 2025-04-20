@@ -10,4 +10,5 @@ public interface ProfileService {
     Profile getProfileById(Long id, String token);
     Profile getProfileByEmail(String email, String token);
     Profile updateProfile(Long id, Map<String, Object> updates, String token);
+    void disableProfile(Long id, String token);
 }

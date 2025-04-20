@@ -1,5 +1,6 @@
 package com.ollirum.ms_profiles.services.impl;
 
+import com.ollirum.ms_profiles.client.UsersClient;
 import com.ollirum.ms_profiles.configuration.JwtTokenProvider;
 import com.ollirum.ms_profiles.entities.Profile;
 import com.ollirum.ms_profiles.exceptions.ProfileNotFoundException;
@@ -17,10 +18,12 @@ import java.util.Set;
 public class ProfileServiceImpl implements ProfileService {
     private final ProfileRepository profileRepository;
     private final JwtTokenProvider jwtTokenProvider;
+    private final UsersClient usersClient;
 
-    public ProfileServiceImpl(ProfileRepository profileRepository, JwtTokenProvider jwtTokenProvider) {
+    public ProfileServiceImpl(ProfileRepository profileRepository, JwtTokenProvider jwtTokenProvider, UsersClient usersClient) {
         this.profileRepository = profileRepository;
         this.jwtTokenProvider = jwtTokenProvider;
+        this.usersClient = usersClient;
     }
 
     @Override
@@ -82,5 +85,21 @@ public class ProfileServiceImpl implements ProfileService {
         });
 
         return profileRepository.save(existingProfile);
+    }
+
+    @Override
+    public void disableProfile(Long id, String token) {
+        Profile profile = profileRepository.findById(id)
+                .orElseThrow(() -> new ProfileNotFoundException("Perfil não encontrado."));
+
+        Long tokenUserId = jwtTokenProvider.getUserIdFromToken(token);
+        List<String> roles = jwtTokenProvider.getRolesFromToken(token);
+        if (!tokenUserId.equals(profile.getId()) && !roles.contains("ADMIN")) {
+            throw new UnauthorizedAccessException("Você não ter permissão para desativar este perfil.");
+        }
+
+        profile.setEnabled(false);
+        profileRepository.save(profile);
+        usersClient.disableUser(profile.getId(), "Bearer " + token);
     }
 }

@@ -17,6 +17,9 @@ public class Profile {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
+    private boolean isEnabled = true;
+
     @OneToMany(mappedBy = "profile")
     private List<Address> addresses = new ArrayList<>();
 
@@ -26,10 +29,11 @@ public class Profile {
     public Profile() {
     }
 
-    public Profile(Long id, String name, String email, List<Address> addresses, List<Order> ordersHistory) {
+    public Profile(Long id, String name, String email, boolean isEnabled, List<Address> addresses, List<Order> ordersHistory) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.isEnabled = isEnabled;
         this.addresses = addresses;
         this.ordersHistory = ordersHistory;
     }
@@ -56,6 +60,14 @@ public class Profile {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 
     public List<Address> getAddresses() {

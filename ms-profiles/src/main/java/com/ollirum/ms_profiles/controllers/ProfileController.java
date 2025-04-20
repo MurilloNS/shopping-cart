@@ -51,4 +51,12 @@ public class ProfileController {
         Profile updatedProfile = profileService.updateProfile(id, updates, token);
         return ResponseEntity.ok(updatedProfile);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProfile(@PathVariable Long id,
+                                              @RequestHeader("Authorization") String authHeader) {
+        String token = authHeader.replace("Bearer ", "");
+        profileService.disableProfile(id, token);
+        return ResponseEntity.noContent().build();
+    }
 }

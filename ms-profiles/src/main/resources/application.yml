@@ -24,6 +24,10 @@ spring:
       secret-key: "17KlgIf}WM[H7TBunx/9M!bFyT2gUM@G"
       expiration-time: 3600000
 
+feign:
+  httpclient:
+    enabled: true
+
 eureka:
   client:
     service-url:
@@ -31,3 +35,6 @@ eureka:
   instance:
     hostname: ms-profiles
     prefer-ip-address: false
+
+ms-users:
+  url: http://localhost:8081
