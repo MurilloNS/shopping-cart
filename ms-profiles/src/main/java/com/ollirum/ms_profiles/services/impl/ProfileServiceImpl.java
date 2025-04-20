@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @Service
@@ -59,5 +60,27 @@ public class ProfileServiceImpl implements ProfileService {
 
         return profileRepository.findByEmail(email)
                 .orElseThrow(() -> new ProfileNotFoundException("Perfil não encontrado para o e-mail: " + email));
+    }
+
+    @Override
+    public Profile updateProfile(Long id, Map<String, Object> updates, String token) {
+        Profile existingProfile = profileRepository.findById(id)
+                .orElseThrow(() -> new ProfileNotFoundException("Perfil não encontrado."));
+
+        String tokenEmail = jwtTokenProvider.getEmailFromToken(token);
+        List<String> roles = jwtTokenProvider.getRolesFromToken(token);
+        boolean isAdmin = roles.contains("ADMIN");
+        boolean isOwner = existingProfile.getEmail().equals(tokenEmail);
+        if (!isOwner && !isAdmin) {
+            throw new UnauthorizedAccessException("Você não tem permissão para atualizar este perfil.");
+        }
+
+        updates.forEach((key, value) -> {
+            switch (key) {
+                case "name" -> existingProfile.setName((String) value);
+            }
+        });
+
+        return profileRepository.save(existingProfile);
     }
 }

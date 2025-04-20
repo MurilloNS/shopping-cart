@@ -6,6 +6,8 @@ import com.ollirum.ms_profiles.services.ProfileService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/profiles")
 public class ProfileController {
@@ -39,5 +41,14 @@ public class ProfileController {
         String email = jwtTokenProvider.getEmailFromToken(token);
         Profile profile = profileService.getProfileByEmail(email, token);
         return ResponseEntity.ok(profile);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Profile> updateProfile(@PathVariable Long id,
+                                                 @RequestBody Map<String, Object> updates,
+                                                 @RequestHeader("Authorization") String authHeader) {
+        String token = authHeader.replace("Bearer ", "");
+        Profile updatedProfile = profileService.updateProfile(id, updates, token);
+        return ResponseEntity.ok(updatedProfile);
     }
 }
