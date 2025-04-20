@@ -24,6 +24,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -86,5 +87,11 @@ public class UserServiceImpl implements UserService {
         } catch (BadCredentialsException e) {
             throw new InvalidCredentialsException("E-mail ou senha inválidos!");
         }
+    }
+
+    @Override
+    public Long getUserIdFromUsername(String username) {
+        Optional<User> user = userRepository.findByEmail(username);
+        return user.get().getId();
     }
 }

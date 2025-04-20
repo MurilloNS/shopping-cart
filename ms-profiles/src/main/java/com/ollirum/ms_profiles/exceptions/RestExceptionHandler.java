@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class RestExceptionHandler {
     @ExceptionHandler(ProfileNotFoundException.class)
-    public ResponseEntity<ApiError> handleEmailAlreadyExists(ProfileNotFoundException e) {
+    public ResponseEntity<ApiError> profileNotFound(ProfileNotFoundException e) {
         ApiError apiError = new ApiError(
                 HttpStatus.NOT_FOUND.value(),
                 "Not Found",
@@ -16,5 +16,16 @@ public class RestExceptionHandler {
         );
 
         return new ResponseEntity<>(apiError, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(UnauthorizedAccessException.class)
+    public ResponseEntity<ApiError> unauthorizedAccess(UnauthorizedAccessException e) {
+        ApiError apiError = new ApiError(
+                HttpStatus.UNAUTHORIZED.value(),
+                "Unauthorized",
+                e.getMessage()
+        );
+
+        return new ResponseEntity<>(apiError, HttpStatus.UNAUTHORIZED);
     }
 }

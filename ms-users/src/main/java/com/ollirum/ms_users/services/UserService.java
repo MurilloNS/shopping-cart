@@ -8,4 +8,5 @@ import com.ollirum.ms_users.entities.User;
 public interface UserService {
     UserResponseDto registerUser(User user);
     LoginResponseDto loginUser(LoginRequestDto loginRequestDto);
+    Long getUserIdFromUsername(String username);
 }

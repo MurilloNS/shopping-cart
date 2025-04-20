@@ -1,5 +1,7 @@
 package com.ollirum.ms_users.configuration;
 
+import com.ollirum.ms_users.entities.User;
+import com.ollirum.ms_users.repositories.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -15,10 +17,17 @@ import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
 public class JwtTokenProvider {
+    private final UserRepository userRepository;
+
+    public JwtTokenProvider(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Value("${spring.security.jwt.secret-key}")
     private String jwtSecret;
 
@@ -35,6 +44,9 @@ public class JwtTokenProvider {
     }
 
     public String generateToken(UserDetails userDetails) {
+        String username = userDetails.getUsername();
+        Optional<User> user = userRepository.findByEmail(username);
+        Long userId = user.get().getId();
         List<String> roles = userDetails.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority)
@@ -42,8 +54,9 @@ public class JwtTokenProvider {
                 .collect(Collectors.toList());
 
         return Jwts.builder()
-                .setSubject(userDetails.getUsername())
+                .setSubject(username)
                 .claim("roles", roles)
+                .claim("userId", userId)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + jwtExpiration))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
@@ -61,7 +74,11 @@ public class JwtTokenProvider {
 
     public boolean validateToken(String token) {
         try {
-            Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token);
+            Jwts.parserBuilder()
+                    .setSigningKey(getSigningKey())
+                    .build()
+                    .parseClaimsJws(token);
+
             return true;
         } catch (Exception e) {
             System.out.println("Erro ao validar token: " + e.getMessage());
