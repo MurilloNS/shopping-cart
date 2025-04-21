@@ -6,6 +6,7 @@ import com.ollirum.ms_profiles.services.ProfileService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -52,11 +53,23 @@ public class ProfileController {
         return ResponseEntity.ok(updatedProfile);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProfile(@PathVariable Long id,
+    @DeleteMapping("/{id}/disable")
+    public ResponseEntity<Void> disableProfile(@PathVariable Long id,
                                               @RequestHeader("Authorization") String authHeader) {
         String token = authHeader.replace("Bearer ", "");
         profileService.disableProfile(id, token);
         return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProfile(@PathVariable Long id,
+                                              @RequestHeader("Authorization") String token) {
+        profileService.deleteProfile(id, token);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Profile>> getAllProfiles(@RequestHeader("Authorization") String token) {
+        return ResponseEntity.ok(profileService.findAll(token));
     }
 }

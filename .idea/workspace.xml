@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/client/UsersClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/FeignConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/UserNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/MsProfilesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/MsProfilesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/client/UsersClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/client/UsersClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/JwtTokenProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/entities/Profile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/RestExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/repositories/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,6 +1,7 @@
 package com.ollirum.ms_profiles.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -10,4 +11,8 @@ public interface UsersClient {
     @PatchMapping("/api/auth/{id}/disable")
     void disableUser(@PathVariable("id") Long id,
                      @RequestHeader("Authorization") String authHeader);
+
+    @DeleteMapping("/api/auth/{id}")
+    void deleteUser(@PathVariable("id") Long id,
+                    @RequestHeader("Authorization") String authHeader);
 }

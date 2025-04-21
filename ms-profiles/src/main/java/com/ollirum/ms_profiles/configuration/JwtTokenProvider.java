@@ -72,6 +72,10 @@ public class JwtTokenProvider {
     }
 
     public List<String> getRolesFromToken(String token) {
+        if (token != null && token.startsWith("Bearer ")) {
+            token = token.substring(7);
+        }
+
         Claims claims = Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
                 .build()

@@ -102,4 +102,23 @@ public class ProfileServiceImpl implements ProfileService {
         profileRepository.save(profile);
         usersClient.disableUser(profile.getId(), "Bearer " + token);
     }
+
+    @Override
+    public void deleteProfile(Long id, String token) {
+        Profile profile = profileRepository.findById(id)
+                .orElseThrow(() -> new ProfileNotFoundException("Perfil não encontrado."));
+
+        usersClient.deleteUser(id, token);
+        profileRepository.delete(profile);
+    }
+
+    @Override
+    public List<Profile> findAll(String token) {
+        List<String> roles = jwtTokenProvider.getRolesFromToken(token);
+        if (!roles.contains("ADMIN")) {
+            throw new UnauthorizedAccessException("Apenas administradores podem visualizar todos os perfis.");
+        }
+
+        return profileRepository.findAll();
+    }
 }

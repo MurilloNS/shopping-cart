@@ -5,13 +5,13 @@ import com.ollirum.ms_users.dto.LoginRequestDto;
 import com.ollirum.ms_users.dto.LoginResponseDto;
 import com.ollirum.ms_users.dto.UserResponseDto;
 import com.ollirum.ms_users.entities.User;
+import com.ollirum.ms_users.exceptions.UserNotFoundException;
 import com.ollirum.ms_users.repositories.UserRepository;
 import com.ollirum.ms_users.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -48,10 +48,19 @@ public class AuthController {
     @PatchMapping("/{id}/disable")
     public ResponseEntity<Void> disableUser(@PathVariable Long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuário(a) não encontrado(a)"));
+                .orElseThrow(() -> new UserNotFoundException("Usuário(a) não encontrado(a)"));
 
         user.setEnabled(false);
         userRepository.save(user);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("Usuário(a) não encontrado(a)."));
+
+        userRepository.delete(user);
         return ResponseEntity.noContent().build();
     }
 }
