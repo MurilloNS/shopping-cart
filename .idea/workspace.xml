@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ms-users/src/main/resources/application-test.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/test/java/com/ollirum/ms_users/services/impl/UserServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/client/UsersClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/client/UsersClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/ProfileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/test/java/com/ollirum/ms_users/MsUsersApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/test/java/com/ollirum/ms_users/MsUsersApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,51 +70,94 @@
       <recent name="com.ollirum.ms_profiles.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MsProfilesApplication">
-    <configuration name="MsEurekaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_eureka.MsEurekaApplication" />
-      <module name="ms-eureka" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_eureka.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsProfilesApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_profiles.MsProfilesApplication" />
-      <module name="ms-profiles" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_profiles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsUsersApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.MsUsersApplication" />
+  <component name="RunManager" selected="JUnit.UserServiceImplTest.shouldPublishEventWhenUserIsCreated">
+    <configuration name="UserServiceImplTest.shouldEncodePasswordBeforeSavingUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ms-users" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_users.*" />
+          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldEncodePasswordBeforeSavingUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.shouldPublishEventWhenUserIsCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldPublishEventWhenUserIsCreated" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.shouldSetDefaultRoleWhenRolesIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldSetDefaultRoleWhenRolesIsEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.shouldSetGivenRolesWhenValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldSetGivenRolesWhenValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.shouldThrowExceptionCustomRoleNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionCustomRoleNotFound" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MsProfilesApplication" />
-        <item itemvalue="Application.MsUsersApplication" />
-        <item itemvalue="Application.MsEurekaApplication" />
+        <item itemvalue="JUnit.UserServiceImplTest.shouldPublishEventWhenUserIsCreated" />
+        <item itemvalue="JUnit.UserServiceImplTest.shouldEncodePasswordBeforeSavingUser" />
+        <item itemvalue="JUnit.UserServiceImplTest.shouldThrowExceptionCustomRoleNotFound" />
+        <item itemvalue="JUnit.UserServiceImplTest.shouldSetGivenRolesWhenValid" />
+        <item itemvalue="JUnit.UserServiceImplTest.shouldSetDefaultRoleWhenRolesIsEmpty" />
       </list>
     </recent_temporary>
   </component>

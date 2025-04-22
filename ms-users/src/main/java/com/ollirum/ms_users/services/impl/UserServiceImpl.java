@@ -54,10 +54,14 @@ public class UserServiceImpl implements UserService {
 
         Set<Role> roles = user.getRoles();
         if (roles == null || roles.isEmpty()) {
-            Role defaultRole = roleRepository.findByName("ROLE_USER").orElseThrow(() -> new NotFoundException("Role padrão não encontrada!"));
+            Role defaultRole = roleRepository.findByName("ROLE_USER")
+                    .orElseThrow(() -> new NotFoundException("Role padrão não encontrada!"));
+
             roles = Collections.singleton(defaultRole);
         } else {
-            roles = roles.stream().map(role -> roleRepository.findByName(role.getName()).orElseThrow(() -> new NotFoundException("Role não encontrada: " + role.getName()))).collect(Collectors.toSet());
+            roles = roles.stream().map(role -> roleRepository.findByName(role.getName())
+                            .orElseThrow(() -> new NotFoundException("Role não encontrada: " + role.getName())))
+                    .collect(Collectors.toSet());
         }
 
         user.setRoles(roles);
@@ -65,7 +69,11 @@ public class UserServiceImpl implements UserService {
         User savedUser = userRepository.save(user);
 
         userEventPublisher.publishUserCreated(
-                new UserCreatedEvent(savedUser.getId(), savedUser.getName(), savedUser.getEmail(), savedUser.getRolesAsString())
+                new UserCreatedEvent(
+                        savedUser.getId(),
+                        savedUser.getName(),
+                        savedUser.getEmail(),
+                        savedUser.getRolesAsString())
         );
 
         UserResponseDto userResponseDto = new UserResponseDto();
@@ -79,7 +87,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public LoginResponseDto loginUser(LoginRequestDto loginRequestDto) {
         try {
-            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequestDto.getEmail(), loginRequestDto.getPassword()));
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            loginRequestDto.getEmail(), loginRequestDto.getPassword()));
             SecurityContextHolder.getContext().setAuthentication(authentication);
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             String token = jwtTokenProvider.generateToken(userDetails);
