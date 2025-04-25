@@ -1,6 +1,9 @@
 package com.ollirum.ms_users.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -13,12 +16,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "O campo Nome é obrigatório.")
+    @Size(max = 100, message = "Nome deve ter no máximo 100 caracteres.")
     @Column(nullable = false)
     private String name;
 
+    @NotBlank(message = "O campo E-mail é obrigatório.")
+    @Email(message = "E-mail inválido")
     @Column(nullable = false, unique = true)
     private String email;
 
+    @NotBlank(message = "O campo Senha é obrigatório.")
     @Column(nullable = false)
     private String password;
 

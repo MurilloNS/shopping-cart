@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-users/src/main/resources/application-test.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-users/src/test/java/com/ollirum/ms_users/services/impl/UserServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-users/src/test/java/com/ollirum/ms_users/controllers/AuthControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/RestExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/exceptions/NotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/main/java/com/ollirum/ms_users/services/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-users/src/test/java/com/ollirum/ms_users/MsUsersApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-users/src/test/java/com/ollirum/ms_users/MsUsersApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,82 +70,79 @@
       <recent name="com.ollirum.ms_profiles.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceImplTest.shouldPublishEventWhenUserIsCreated">
-    <configuration name="UserServiceImplTest.shouldEncodePasswordBeforeSavingUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AuthControllerTest.shouldFailWhenRoleDoesNotExist">
+    <configuration name="MsUsersApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.MsUsersApplication" />
       <module name="ms-users" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="PATTERN" value="com.ollirum.ms_users.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="shouldEncodePasswordBeforeSavingUser" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthControllerTest.shouldFailWhenEmailAlreadyExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ms-users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ollirum.ms_users.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.controllers.AuthControllerTest" />
+      <option name="METHOD_NAME" value="shouldFailWhenEmailAlreadyExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.shouldPublishEventWhenUserIsCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthControllerTest.shouldFailWhenFieldsAreInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ms-users" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="PATTERN" value="com.ollirum.ms_users.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="shouldPublishEventWhenUserIsCreated" />
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.controllers.AuthControllerTest" />
+      <option name="METHOD_NAME" value="shouldFailWhenFieldsAreInvalid" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.shouldSetDefaultRoleWhenRolesIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthControllerTest.shouldFailWhenRoleDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ms-users" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="PATTERN" value="com.ollirum.ms_users.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="shouldSetDefaultRoleWhenRolesIsEmpty" />
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.controllers.AuthControllerTest" />
+      <option name="METHOD_NAME" value="shouldFailWhenRoleDoesNotExist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.shouldSetGivenRolesWhenValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthControllerTest.shouldRegisterUserSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ms-users" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
+          <option name="PATTERN" value="com.ollirum.ms_users.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="shouldSetGivenRolesWhenValid" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceImplTest.shouldThrowExceptionCustomRoleNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ms-users" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_users.services.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.services.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.services.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="shouldThrowExceptionCustomRoleNotFound" />
+      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.controllers.AuthControllerTest" />
+      <option name="METHOD_NAME" value="shouldRegisterUserSuccessfully" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -153,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceImplTest.shouldPublishEventWhenUserIsCreated" />
-        <item itemvalue="JUnit.UserServiceImplTest.shouldEncodePasswordBeforeSavingUser" />
-        <item itemvalue="JUnit.UserServiceImplTest.shouldThrowExceptionCustomRoleNotFound" />
-        <item itemvalue="JUnit.UserServiceImplTest.shouldSetGivenRolesWhenValid" />
-        <item itemvalue="JUnit.UserServiceImplTest.shouldSetDefaultRoleWhenRolesIsEmpty" />
+        <item itemvalue="JUnit.AuthControllerTest.shouldFailWhenRoleDoesNotExist" />
+        <item itemvalue="Application.MsUsersApplication" />
+        <item itemvalue="JUnit.AuthControllerTest.shouldFailWhenFieldsAreInvalid" />
+        <item itemvalue="JUnit.AuthControllerTest.shouldFailWhenEmailAlreadyExists" />
+        <item itemvalue="JUnit.AuthControllerTest.shouldRegisterUserSuccessfully" />
       </list>
     </recent_temporary>
   </component>

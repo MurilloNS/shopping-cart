@@ -5,7 +5,7 @@ import com.ollirum.ms_users.dto.LoginRequestDto;
 import com.ollirum.ms_users.dto.LoginResponseDto;
 import com.ollirum.ms_users.dto.UserResponseDto;
 import com.ollirum.ms_users.entities.User;
-import com.ollirum.ms_users.exceptions.UserNotFoundException;
+import com.ollirum.ms_users.exceptions.NotFoundException;
 import com.ollirum.ms_users.repositories.UserRepository;
 import com.ollirum.ms_users.services.UserService;
 import jakarta.validation.Valid;
@@ -34,7 +34,7 @@ public class AuthController {
 
     @PostMapping("/register")
     @Transactional
-    public ResponseEntity<UserResponseDto> registerUser(@RequestBody User user) {
+    public ResponseEntity<UserResponseDto> registerUser(@Valid @RequestBody User user) {
         UserResponseDto userResponseDto = userService.registerUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDto);
     }
@@ -48,7 +48,7 @@ public class AuthController {
     @PatchMapping("/{id}/disable")
     public ResponseEntity<Void> disableUser(@PathVariable Long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("Usuário(a) não encontrado(a)"));
+                .orElseThrow(() -> new NotFoundException("Usuário(a) não encontrado(a)"));
 
         user.setEnabled(false);
         userRepository.save(user);
@@ -58,7 +58,7 @@ public class AuthController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("Usuário(a) não encontrado(a)."));
+                .orElseThrow(() -> new NotFoundException("Usuário(a) não encontrado(a)."));
 
         userRepository.delete(user);
         return ResponseEntity.noContent().build();
