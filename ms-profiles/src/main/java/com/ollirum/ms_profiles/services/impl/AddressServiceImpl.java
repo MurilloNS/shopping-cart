@@ -5,6 +5,7 @@ import com.ollirum.ms_profiles.dto.AddressResponseDto;
 import com.ollirum.ms_profiles.entities.Address;
 import com.ollirum.ms_profiles.entities.Profile;
 import com.ollirum.ms_profiles.exceptions.ProfileNotFoundException;
+import com.ollirum.ms_profiles.mappers.AddressMapper;
 import com.ollirum.ms_profiles.repositories.AddressRepository;
 import com.ollirum.ms_profiles.repositories.ProfileRepository;
 import com.ollirum.ms_profiles.services.AddressService;
@@ -19,10 +20,12 @@ import java.util.stream.Collectors;
 public class AddressServiceImpl implements AddressService {
     private final AddressRepository addressRepository;
     private final ProfileRepository profileRepository;
+    private final AddressMapper addressMapper;
 
-    public AddressServiceImpl(AddressRepository addressRepository, ProfileRepository profileRepository) {
+    public AddressServiceImpl(AddressRepository addressRepository, ProfileRepository profileRepository, AddressMapper addressMapper) {
         this.addressRepository = addressRepository;
         this.profileRepository = profileRepository;
+        this.addressMapper = addressMapper;
     }
 
     @Override
@@ -31,16 +34,16 @@ public class AddressServiceImpl implements AddressService {
         Profile profile = profileRepository.findById(addressRequestDto.getProfileId())
                 .orElseThrow(() -> new ProfileNotFoundException("Perfil não encontrado."));
 
-        Address address = mapToAddress(addressRequestDto, profile);
+        Address address = addressMapper.toEntity(addressRequestDto, profile);
         Address savedAddress = addressRepository.save(address);
-        return mapToAddressResponseDto(savedAddress);
+        return addressMapper.toDto(savedAddress);
     }
 
     @Override
     public List<AddressResponseDto> getAddressesByProfileId(Long profileId) {
         List<Address> addresses = addressRepository.findByProfileId(profileId);
         return addresses.stream()
-                .map(this::mapToAddressResponseDto)
+                .map(addressMapper::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -60,7 +63,7 @@ public class AddressServiceImpl implements AddressService {
         });
 
         Address updatedAddress = addressRepository.save(address);
-        return mapToAddressResponseDto(updatedAddress);
+        return addressMapper.toDto(updatedAddress);
     }
 
     @Override
@@ -70,25 +73,5 @@ public class AddressServiceImpl implements AddressService {
                 .orElseThrow(() -> new ProfileNotFoundException("Endereço não encontrado."));
 
         addressRepository.delete(address);
-    }
-
-    private Address mapToAddress(AddressRequestDto dto, Profile profile) {
-        Address address = new Address();
-        address.setRoad(dto.getRoad());
-        address.setNumber(dto.getNumber());
-        address.setCity(dto.getCity());
-        address.setState(dto.getState());
-        address.setProfile(profile);
-        return address;
-    }
-
-    private AddressResponseDto mapToAddressResponseDto(Address address) {
-        AddressResponseDto dto = new AddressResponseDto();
-        dto.setId(address.getId());
-        dto.setRoad(address.getRoad());
-        dto.setNumber(address.getNumber());
-        dto.setCity(address.getCity());
-        dto.setState(address.getState());
-        return dto;
     }
 }
