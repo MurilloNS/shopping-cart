@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ms-eureka/ms-eureka.iml" filepath="$PROJECT_DIR$/ms-eureka/ms-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-orders/ms-orders.iml" filepath="$PROJECT_DIR$/ms-orders/ms-orders.iml" />
       <module fileurl="file://$PROJECT_DIR$/ms-profiles/ms-profiles.iml" filepath="$PROJECT_DIR$/ms-profiles/ms-profiles.iml" />
       <module fileurl="file://$PROJECT_DIR$/ms-users/ms-users.iml" filepath="$PROJECT_DIR$/ms-users/ms-users.iml" />
       <module fileurl="file://$PROJECT_DIR$/shopping-cart.iml" filepath="$PROJECT_DIR$/shopping-cart.iml" />

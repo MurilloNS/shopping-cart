@@ -23,19 +23,15 @@ public class Profile {
     @OneToMany(mappedBy = "profile")
     private List<Address> addresses = new ArrayList<>();
 
-    @OneToMany(mappedBy = "profile")
-    private List<Order> ordersHistory = new ArrayList<>();
-
     public Profile() {
     }
 
-    public Profile(Long id, String name, String email, boolean isEnabled, List<Address> addresses, List<Order> ordersHistory) {
+    public Profile(Long id, String name, String email, boolean isEnabled, List<Address> addresses) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.isEnabled = isEnabled;
         this.addresses = addresses;
-        this.ordersHistory = ordersHistory;
     }
 
     public Long getId() {
@@ -76,13 +72,5 @@ public class Profile {
 
     public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
-    }
-
-    public List<Order> getOrdersHistory() {
-        return ordersHistory;
-    }
-
-    public void setOrdersHistory(List<Order> ordersHistory) {
-        this.ordersHistory = ordersHistory;
     }
 }

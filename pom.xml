@@ -31,6 +31,7 @@
 		<module>ms-eureka</module>
 		<module>ms-users</module>
 		<module>ms-profiles</module>
+		<module>ms-orders</module>
 	</modules>
 	<properties>
 		<java.version>17</java.version>

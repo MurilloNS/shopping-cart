@@ -1,5 +1,6 @@
 package com.ollirum.ms_profiles.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -22,6 +23,7 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "profile_id")
+    @JsonIgnore
     private Profile profile;
 
     public Address() {
