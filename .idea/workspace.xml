@@ -5,9 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/mappers/AddressMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/events/ProductEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/services/impl/ProductEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/dto/ProductFormData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/dto/ProductRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/dto/ProductResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/entities/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/events/ProductEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/events/ProductEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/exceptions/ApiError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/exceptions/ProductNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/exceptions/RestExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/exceptions/UnauthorizedAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/mappers/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/repositories/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/services/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/services/impl/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,15 +86,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Spring\shopping-cart\ms-orders\src\main\java\com\ollirum\ms_orders" />
+      <recent name="D:\Spring\shopping-cart\ms-products\src\main\java\com\ollirum\ms_products" />
       <recent name="D:\Spring\shopping-cart\ms-profiles\src\main\java\com\ollirum\ms_profiles" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ollirum.ms_orders.events" />
       <recent name="com.ollirum.ms_profiles.configuration" />
       <recent name="com.ollirum.ms_profiles.constants" />
       <recent name="com.ollirum.ms_profiles.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MsOrdersApplication">
+  <component name="RunManager" selected="Application.MsProductsApplication">
     <configuration name="MsEurekaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_eureka.MsEurekaApplication" />
       <module name="ms-eureka" />
@@ -87,6 +116,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ollirum.ms_orders.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MsProductsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_products.MsProductsApplication" />
+      <module name="ms-products" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ollirum.ms_products.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,29 +162,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthControllerTest.shouldFailWhenRoleDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ms-users" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ollirum.ms_users.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ollirum.ms_users.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_users.controllers.AuthControllerTest" />
-      <option name="METHOD_NAME" value="shouldFailWhenRoleDoesNotExist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MsProductsApplication" />
         <item itemvalue="Application.MsOrdersApplication" />
+        <item itemvalue="Application.MsProfilesApplication" />
         <item itemvalue="Application.MsUsersApplication" />
         <item itemvalue="Application.MsEurekaApplication" />
-        <item itemvalue="Application.MsProfilesApplication" />
-        <item itemvalue="JUnit.AuthControllerTest.shouldFailWhenRoleDoesNotExist" />
       </list>
     </recent_temporary>
   </component>

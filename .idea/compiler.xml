@@ -11,6 +11,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ms-profiles" />
         <module name="ms-eureka" />
+        <module name="ms-products" />
         <module name="ms-users" />
         <module name="ms-orders" />
       </profile>
@@ -18,6 +19,7 @@
     <bytecodeTargetLevel>
       <module name="ms-eureka" target="17" />
       <module name="ms-orders" target="17" />
+      <module name="ms-products" target="17" />
       <module name="ms-profiles" target="17" />
       <module name="ms-users" target="17" />
       <module name="shopping-cart" target="1.5" />
@@ -27,6 +29,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ms-eureka" options="-parameters" />
       <module name="ms-orders" options="-parameters" />
+      <module name="ms-products" options="-parameters" />
       <module name="ms-profiles" options="-parameters" />
       <module name="ms-users" options="-parameters" />
       <module name="shopping-cart" options="" />
