@@ -1,6 +1,7 @@
 package com.ollirum.ms_profiles.controllers;
 
 import com.ollirum.ms_profiles.configuration.JwtTokenProvider;
+import com.ollirum.ms_profiles.controllers.openapi.ProfileControllerOpenApi;
 import com.ollirum.ms_profiles.entities.Profile;
 import com.ollirum.ms_profiles.services.ProfileService;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/profiles")
-public class ProfileController {
+public class ProfileController implements ProfileControllerOpenApi {
     private final ProfileService profileService;
     private final JwtTokenProvider jwtTokenProvider;
 
