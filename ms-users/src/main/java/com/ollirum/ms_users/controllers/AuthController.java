@@ -1,6 +1,7 @@
 package com.ollirum.ms_users.controllers;
 
 import com.ollirum.ms_users.configuration.JwtTokenProvider;
+import com.ollirum.ms_users.controllers.openapi.AuthControllerOpenApi;
 import com.ollirum.ms_users.dto.LoginRequestDto;
 import com.ollirum.ms_users.dto.LoginResponseDto;
 import com.ollirum.ms_users.dto.UserResponseDto;
@@ -8,6 +9,7 @@ import com.ollirum.ms_users.entities.User;
 import com.ollirum.ms_users.exceptions.NotFoundException;
 import com.ollirum.ms_users.repositories.UserRepository;
 import com.ollirum.ms_users.services.UserService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Validated
 @RequestMapping("/api/auth")
-public class AuthController {
+public class AuthController implements AuthControllerOpenApi {
     private final UserService userService;
     private final UserRepository userRepository;
     private final AuthenticationManager authenticationManager;
@@ -46,6 +48,7 @@ public class AuthController {
     }
 
     @PatchMapping("/{id}/disable")
+    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<Void> disableUser(@PathVariable Long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Usuário(a) não encontrado(a)"));
@@ -56,6 +59,7 @@ public class AuthController {
     }
 
     @DeleteMapping("/{id}")
+    @SecurityRequirement(name = "Bearer Authentication")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Usuário(a) não encontrado(a)."));

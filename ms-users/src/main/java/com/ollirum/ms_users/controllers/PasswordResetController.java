@@ -1,5 +1,6 @@
 package com.ollirum.ms_users.controllers;
 
+import com.ollirum.ms_users.controllers.openapi.PasswordResetControllerOpenApi;
 import com.ollirum.ms_users.dto.PasswordResetRequestDto;
 import com.ollirum.ms_users.dto.ResetPasswordDto;
 import com.ollirum.ms_users.services.PasswordResetService;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/password-reset")
-public class PasswordResetController {
+public class PasswordResetController implements PasswordResetControllerOpenApi {
     private final PasswordResetService passwordResetService;
 
     public PasswordResetController(PasswordResetService passwordResetService) {

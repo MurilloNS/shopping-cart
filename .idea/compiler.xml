@@ -16,14 +16,6 @@
         <module name="ms-orders" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ms-eureka" target="17" />
-      <module name="ms-orders" target="17" />
-      <module name="ms-products" target="17" />
-      <module name="ms-profiles" target="17" />
-      <module name="ms-users" target="17" />
-      <module name="shopping-cart" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
