@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/openapi/ProfileControllerOpenApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/openapi/AddressControllerOpenApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/AddressController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,29 +61,29 @@
     <option name="showLibraryContents" value="true" />
     <option name="showModules" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MsEurekaApplication (1).executor": "Run",
-    "Application.MsEurekaApplication.executor": "Run",
-    "Application.MsOrdersApplication.executor": "Run",
-    "Application.MsProductsApplication.executor": "Run",
-    "Application.MsProfilesApplication.executor": "Run",
-    "Application.MsUsersApplication.executor": "Run",
-    "Maven.ms-eureka [compile].executor": "Run",
-    "Maven.ms-eureka [install].executor": "Run",
-    "Maven.shopping-cart [install,compile].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Spring/shopping-cart",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MsEurekaApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.MsEurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MsOrdersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MsProductsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MsProfilesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MsUsersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ms-eureka [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ms-eureka [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.shopping-cart [install,compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Spring/shopping-cart&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Spring\shopping-cart\ms-orders\src\main\java\com\ollirum\ms_orders" />
@@ -174,9 +171,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MsProfilesApplication" />
+        <item itemvalue="Application.MsOrdersApplication" />
         <item itemvalue="Application.MsProductsApplication" />
         <item itemvalue="Application.MsUsersApplication" />
-        <item itemvalue="Application.MsOrdersApplication" />
         <item itemvalue="Application.MsEurekaApplication (1)" />
       </list>
     </recent_temporary>

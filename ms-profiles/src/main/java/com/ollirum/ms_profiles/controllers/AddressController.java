@@ -1,5 +1,6 @@
 package com.ollirum.ms_profiles.controllers;
 
+import com.ollirum.ms_profiles.controllers.openapi.AddressControllerOpenApi;
 import com.ollirum.ms_profiles.dto.AddressRequestDto;
 import com.ollirum.ms_profiles.dto.AddressResponseDto;
 import com.ollirum.ms_profiles.services.AddressService;
@@ -13,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/address")
-public class AddressController {
+public class AddressController implements AddressControllerOpenApi {
     private final AddressService addressService;
 
     public AddressController(AddressService addressService) {
