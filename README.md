@@ -1,6 +1,6 @@
 # 🛒 Shopping Cart – Microservices Architecture
 
-Este projeto é um sistema de e-commerce modular desenvolvido com arquitetura de microsserviços, utilizando **Spring Boot 3**, **Cloud Gateway**, **Eureka Discovery**, **RabbitMQ**, **MySQL (Docker)** e comunicação via **REST + Mensageria**.  
+Este projeto é um sistema de e-commerce modular desenvolvido com arquitetura de microsserviços, utilizando **Spring Boot 3**, **Eureka Discovery**, **RabbitMQ**, **MySQL (Docker)** e comunicação via **REST + Mensageria**.  
 O objetivo é oferecer uma estrutura sólida para um carrinho de compras moderno, escalável e com serviços independentes.
 
 ---
