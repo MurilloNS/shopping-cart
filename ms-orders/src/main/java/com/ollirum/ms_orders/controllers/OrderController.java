@@ -1,5 +1,6 @@
 package com.ollirum.ms_orders.controllers;
 
+import com.ollirum.ms_orders.controllers.openapi.OrderControllerOpenApi;
 import com.ollirum.ms_orders.entities.Order;
 import com.ollirum.ms_orders.services.OrderService;
 import org.springframework.http.HttpStatus;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/orders")
-public class OrderController {
+public class OrderController implements OrderControllerOpenApi {
     private final OrderService orderService;
 
     public OrderController(OrderService orderService) {

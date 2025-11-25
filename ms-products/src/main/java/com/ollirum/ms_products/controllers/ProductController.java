@@ -1,9 +1,11 @@
 package com.ollirum.ms_products.controllers;
 
+import com.ollirum.ms_products.controllers.openapi.ProductControllerOpenApi;
 import com.ollirum.ms_products.dto.ProductFormData;
 import com.ollirum.ms_products.dto.ProductRequestDto;
 import com.ollirum.ms_products.dto.ProductResponseDto;
 import com.ollirum.ms_products.services.ProductService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +15,7 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/api/products")
-public class ProductController {
+public class ProductController implements ProductControllerOpenApi {
     private final ProductService productService;
 
     public ProductController(ProductService productService) {
@@ -30,6 +32,7 @@ public class ProductController {
                 form.getStock(), form.getActive()
         );
 
-        return ResponseEntity.ok(productService.createProduct(dto, form.getImage(), token));
+        ProductResponseDto response = productService.createProduct(dto, form.getImage(), token);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

@@ -1,4 +1,4 @@
-package com.ollirum.ms_products.configuration;
+package com.ollirum.ms_orders.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -14,9 +14,9 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Product Service API")
+                        .title("Order Service API")
                         .version("1.0")
-                        .description("Documentação do microservice de produtos"))
+                        .description("Documentação do microservice de pedido"))
                 .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
                 .components(new Components()
                         .addSecuritySchemes("Bearer Authentication",

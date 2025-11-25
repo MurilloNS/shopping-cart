@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/openapi/AddressControllerOpenApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/controllers/openapi/OrderControllerOpenApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/openapi/ProductControllerOpenApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-profiles/src/main/java/com/ollirum/ms_profiles/controllers/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/ProductController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +109,7 @@
       <command value="mvn install compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.MsProfilesApplication">
+  <component name="RunManager" selected="Application.MsOrdersApplication">
     <configuration name="MsEurekaApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ollirum.ms_eureka.MsEurekaApplication" />
       <module name="ms-eureka" />
@@ -170,9 +177,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MsProfilesApplication" />
         <item itemvalue="Application.MsOrdersApplication" />
         <item itemvalue="Application.MsProductsApplication" />
+        <item itemvalue="Application.MsProfilesApplication" />
         <item itemvalue="Application.MsUsersApplication" />
         <item itemvalue="Application.MsEurekaApplication (1)" />
       </list>
