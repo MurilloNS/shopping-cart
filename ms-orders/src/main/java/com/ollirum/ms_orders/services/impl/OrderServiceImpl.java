@@ -1,14 +1,16 @@
 package com.ollirum.ms_orders.services.impl;
 
+import com.ollirum.ms_orders.client.ProductClient;
 import com.ollirum.ms_orders.configuration.JwtTokenProvider;
+import com.ollirum.ms_orders.dto.ProductResponseDto;
 import com.ollirum.ms_orders.entities.Order;
+import com.ollirum.ms_orders.entities.OrderItem;
 import com.ollirum.ms_orders.enums.OrderStatus;
 import com.ollirum.ms_orders.exceptions.OrderCancellationException;
 import com.ollirum.ms_orders.exceptions.OrderNotFoundException;
 import com.ollirum.ms_orders.exceptions.UnauthorizedAccessException;
 import com.ollirum.ms_orders.repositories.OrderRepository;
 import com.ollirum.ms_orders.services.OrderService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -20,12 +22,12 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
     private final JwtTokenProvider jwtTokenProvider;
-    private final HttpServletRequest request;
+    private final ProductClient productClient;
 
-    public OrderServiceImpl(OrderRepository orderRepository, JwtTokenProvider jwtTokenProvider, HttpServletRequest request) {
+    public OrderServiceImpl(OrderRepository orderRepository, JwtTokenProvider jwtTokenProvider, ProductClient productClient) {
         this.orderRepository = orderRepository;
         this.jwtTokenProvider = jwtTokenProvider;
-        this.request = request;
+        this.productClient = productClient;
     }
 
     @Override
@@ -38,6 +40,34 @@ public class OrderServiceImpl implements OrderService {
         String token = authorizationHeader.replace("Bearer ", "");
         Long userId = jwtTokenProvider.getUserIdFromToken(token);
         order.setProfileId(userId);
+        double total = 0.0;
+
+        for (OrderItem item : order.getItems()) {
+            ProductResponseDto product = productClient.getProductById(item.getProductId(), token);
+
+            if (product == null || !product.getActive()) {
+                throw new OrderNotFoundException("Produto não encontrado ou inativo: " + item.getProductId());
+            }
+
+            if (item.getQuantity() > product.getStock()) {
+                throw new OrderCancellationException("Estoque insuficiente para o produto: " + product.getName());
+            }
+
+            item.setProductName(product.getName());
+            item.setPrice(product.getPrice().doubleValue());
+            item.setOrder(order);
+
+            total += product.getPrice().doubleValue() * item.getQuantity();
+        }
+
+        order.setPrice(total);
+
+        int totalQtd = order.getItems().stream()
+                .mapToInt(OrderItem::getQuantity)
+                .sum();
+
+        order.setQuantity(totalQtd);
+
         return orderRepository.save(order);
     }
 
@@ -70,9 +100,6 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> getAllByProfileId(Long profileId) {
         List<Order> orders = orderRepository.getAllByProfileId(profileId);
-        System.out.println("Total de pedidos retornados: " + orders.size());
-
         return orders;
     }
-
 }

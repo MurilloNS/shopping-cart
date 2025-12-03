@@ -6,4 +6,5 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface ProductService {
     ProductResponseDto createProduct(ProductRequestDto dto, MultipartFile image, String token);
+    ProductResponseDto getProductById(Long id, String token);
 }

@@ -5,16 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f424c739-3ba3-4117-9a67-f213daf29a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/controllers/openapi/OrderControllerOpenApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/openapi/ProductControllerOpenApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/client/ProductClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/FeignConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/dto/CreateOrderItemRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/dto/CreateOrderRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/dto/ProductResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/MsOrdersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/MsOrdersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/configuration/RabbitMQConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/events/ProductEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/services/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/services/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/java/com/ollirum/ms_orders/services/impl/ProductEventListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-orders/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-orders/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/configuration/RabbitMQConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/openapi/ProductControllerOpenApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/controllers/openapi/ProductControllerOpenApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/events/ProductEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/events/ProductEventPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/services/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/java/com/ollirum/ms_products/services/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-products/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-products/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -98,6 +109,7 @@
       <recent name="D:\Spring\shopping-cart\ms-profiles\src\main\java\com\ollirum\ms_profiles" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ollirum.ms_orders.exceptions" />
       <recent name="com.ollirum.ms_orders.events" />
       <recent name="com.ollirum.ms_profiles.configuration" />
       <recent name="com.ollirum.ms_profiles.constants" />
@@ -179,8 +191,8 @@
       <list>
         <item itemvalue="Application.MsOrdersApplication" />
         <item itemvalue="Application.MsProductsApplication" />
-        <item itemvalue="Application.MsProfilesApplication" />
         <item itemvalue="Application.MsUsersApplication" />
+        <item itemvalue="Application.MsProfilesApplication" />
         <item itemvalue="Application.MsEurekaApplication (1)" />
       </list>
     </recent_temporary>

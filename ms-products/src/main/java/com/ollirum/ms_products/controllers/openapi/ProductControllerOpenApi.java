@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 @Tag(name = "Product", description = "Gerenciamento de produtos")
@@ -36,6 +37,27 @@ public interface ProductControllerOpenApi {
     )
     ResponseEntity<ProductResponseDto> createProduct(
             @ModelAttribute ProductFormData form,
+            @Parameter(hidden = true) String token
+    );
+
+    @Operation(
+            summary = "Buscar produto por ID",
+            description = "Retorna os dados de um produto específico através do seu ID.",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "Produto encontrado",
+                            content = @Content(
+                                    schema = @Schema(implementation = ProductResponseDto.class)
+                            )
+                    ),
+                    @ApiResponse(responseCode = "404", description = "Produto não encontrado!"),
+                    @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
+            }
+    )
+    ResponseEntity<ProductResponseDto> getProductById(
+            @Parameter(description = "ID do produto a ser buscado", required = true)
+            @PathVariable Long id,
             @Parameter(hidden = true) String token
     );
 }

@@ -24,11 +24,6 @@ spring:
     username: guest
     password: guest
 
-rabbitmq:
-  exchange: product.exchange
-  routing-key:
-    products: product.created
-
 eureka:
   client:
     service-url:

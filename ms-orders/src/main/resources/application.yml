@@ -34,6 +34,10 @@ spring:
           multiplier: 2.0
           max-interval: 10000
 
+feign:
+  httpclient:
+    enabled: true
+
 eureka:
   client:
     service-url:
@@ -41,3 +45,13 @@ eureka:
   instance:
     hostname: ms-orders
     prefer-ip-address: false
+
+ms-products:
+  url: http://localhost:8084
+
+logging:
+    level:
+      root: INFO
+      com.ollirum.ms_orders: DEBUG
+      org.springframework.cloud.openfeign: DEBUG
+      feign: DEBUG

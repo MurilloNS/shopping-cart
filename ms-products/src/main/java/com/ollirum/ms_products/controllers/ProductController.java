@@ -35,4 +35,10 @@ public class ProductController implements ProductControllerOpenApi {
         ProductResponseDto response = productService.createProduct(dto, form.getImage(), token);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductResponseDto> getProductById(@PathVariable Long id, @RequestHeader("Authorization") String token) {
+        ProductResponseDto dto = productService.getProductById(id, token);
+        return ResponseEntity.ok(dto);
+    }
 }

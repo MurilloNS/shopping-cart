@@ -4,13 +4,13 @@ import com.ollirum.ms_products.configuration.JwtTokenProvider;
 import com.ollirum.ms_products.dto.ProductRequestDto;
 import com.ollirum.ms_products.dto.ProductResponseDto;
 import com.ollirum.ms_products.entities.Product;
-import com.ollirum.ms_products.events.ProductEvent;
-import com.ollirum.ms_products.events.ProductEventPublisher;
+import com.ollirum.ms_products.exceptions.ProductNotFoundException;
 import com.ollirum.ms_products.exceptions.UnauthorizedAccessException;
 import com.ollirum.ms_products.mappers.ProductMapper;
 import com.ollirum.ms_products.repositories.ProductRepository;
 import com.ollirum.ms_products.services.ProductService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -26,13 +26,11 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final JwtTokenProvider jwtTokenProvider;
     private final ProductMapper productMapper;
-    private final ProductEventPublisher productEventPublisher;
 
-    public ProductServiceImpl(ProductRepository productRepository, JwtTokenProvider jwtTokenProvider, ProductMapper productMapper, ProductEventPublisher productEventPublisher) {
+    public ProductServiceImpl(ProductRepository productRepository, JwtTokenProvider jwtTokenProvider, ProductMapper productMapper) {
         this.productRepository = productRepository;
         this.jwtTokenProvider = jwtTokenProvider;
         this.productMapper = productMapper;
-        this.productEventPublisher = productEventPublisher;
     }
 
     @Override
@@ -67,16 +65,24 @@ public class ProductServiceImpl implements ProductService {
 
         Product saved = productRepository.save(product);
 
-        ProductEvent event = new ProductEvent(
-                "PRODUCT_CREATED",
-                saved.getId(),
-                saved.getName(),
-                saved.getPrice(),
-                saved.getActive(),
-                saved.getStock()
-        );
-
-        productEventPublisher.publishProductCreated(event);
         return productMapper.toDto(saved);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public ProductResponseDto getProductById(Long id, String token) {
+        if (!jwtTokenProvider.validateToken(token)) {
+            throw new UnauthorizedAccessException("Token inválido ou expirado");
+        }
+
+        List<String> roles = jwtTokenProvider.getRolesFromToken(token);
+        if (roles == null || roles.isEmpty()) {
+            throw new UnauthorizedAccessException("Acesso não autorizado");
+        }
+
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado!"));
+
+        return productMapper.toDto(product);
     }
 }
